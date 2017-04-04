@@ -1,0 +1,33 @@
+{
+  "name": "hutber-conventional-changelog",
+  "version": "1.0.0",
+  "description": "An updated version of the mol-conventional-changelog for my own projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "lint": "eslint {prompt/**,.}/*.js",
+    "precommit": "npm run lint"
+  },
+  "author": "Jamie Hutber <jamie@hutber.com>",
+  "homepage": "https://github.com/jamiehutber/hutber-conventional-changelog.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jamiehutber/hutber-conventional-changelog.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "inquirer": "^3.0.6",
+    "word-wrap": "^1.2.0"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "eslint": "^3.17.1",
+    "eslint-config-mailonline": "^6.0.0",
+    "husky": "^0.13.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./index.js"
+    }
+  }
+}
