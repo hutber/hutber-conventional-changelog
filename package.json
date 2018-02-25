@@ -4,7 +4,8 @@
   "description": "A rather fragile conventional changelog",
   "main": "index.js",
   "author": "Jamie Hutber <jamie@hutber.com>",
-  "homepage": "https://github.com/jamiehutber/hutber-conventional-changelog.git",
+  "homepage":
+    "https://github.com/jamiehutber/hutber-conventional-changelog.git",
   "repository": {
     "type": "git",
     "url": "git@github.com:jamiehutber/hutber-conventional-changelog.git"
@@ -36,4 +37,3 @@
     }
   }
 }
-
