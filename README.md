@@ -1,6 +1,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-# asos-mvt-conventional-changelog
+# hutber-conventional-changelog
 
 ## Setup
 
@@ -10,16 +10,16 @@ Install commitizen
 npm install -g commitizen
 ```
 
-Install the `asos-mvt-conventional-changelog` package.
+Install the `hutber-conventional-changelog` package.
 
 ```
-npm install --save-dev asos-mvt-conventional-changelog
+npm install --save-dev hutber-conventional-changelog
 ```
 
 Init commitizen configuration
 
 ```
-commitizen init asos-mvt-conventional-changelog --save-dev --save-exact
+commitizen init hutber-conventional-changelog --save-dev --save-exact
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ perf: remove tracking variant
 
 BREAKING CHANGE: The default tracking option has been removed. You will now need to always give a tracking name
 
-Issues: WMVT-230
+Issues: ISSUE-230
 ```
 
 ### Commit Message Format
