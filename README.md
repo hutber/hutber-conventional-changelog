@@ -1,7 +1,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-# hutber-conventional-changelog
-
+# asos-mvt-conventional-changelog
 
 ## Setup
 
@@ -11,16 +10,16 @@ Install commitizen
 npm install -g commitizen
 ```
 
-Install the `hutber-conventional-changelog` package.
+Install the `asos-mvt-conventional-changelog` package.
 
 ```
-npm install --save-dev hutber-conventional-changelog
+npm install --save-dev asos-mvt-conventional-changelog
 ```
 
 Init commitizen configuration
 
 ```
-commitizen init hutber-conventional-changelog --save-dev --save-exact
+commitizen init asos-mvt-conventional-changelog --save-dev --save-exact
 ```
 
 ## Usage
@@ -32,19 +31,19 @@ git cz
 #### Examples
 
 ```
-feat: add 'graphiteWidth' option
+feat: add 'evar9' tracking
 ```
 
 ```
-fix: stop graphite breaking when width < 0.1
+fix: stop tracking reporting incorrect details
 ```
 
 ```
-perf: remove graphiteWidth option
+perf: remove tracking variant
 
-BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reason.
+BREAKING CHANGE: The default tracking option has been removed. You will now need to always give a tracking name
 
-Issues: 1234
+Issues: WMVT-230
 ```
 
 ### Commit Message Format
@@ -97,11 +96,8 @@ The body should include the motivation for the change and contrast this with pre
 
 ### Breaking Changes
 
-**Breaking Changes** must start with the words `BREAKING CHANGE: `.
+**Breaking Changes** must start with the words `BREAKING CHANGE:`.
 
 ### Footer
 
 The footer is the place to reference any tasks related to this commit.
-
-### Credit
-Code taken from: https://github.com/MailOnline/mol-conventional-changelog just to be used in my personal projects

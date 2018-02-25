@@ -1,29 +1,34 @@
 {
   "name": "hutber-conventional-changelog",
-  "version": "1.0.0",
-  "description": "An updated version of the mol-conventional-changelog for my own projects",
+  "version": "2.0.0",
+  "description": "A rather fragile conventional changelog",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
-    "lint": "eslint {prompt/**,.}/*.js",
-    "precommit": "npm run lint"
-  },
   "author": "Jamie Hutber <jamie@hutber.com>",
   "homepage": "https://github.com/jamiehutber/hutber-conventional-changelog.git",
   "repository": {
     "type": "git",
     "url": "git@github.com:jamiehutber/hutber-conventional-changelog.git"
   },
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "lint": "eslint {prompt/**,.}/*.js",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
   "license": "UNLICENSED",
   "dependencies": {
-    "inquirer": "^3.0.6",
-    "word-wrap": "^1.2.0"
+    "app-root-path": "^2.0.1",
+    "inquirer": "^3.1.1",
+    "shelljs": "^0.7.8",
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {
-    "commitizen": "^2.9.6",
-    "eslint": "^3.17.1",
-    "eslint-config-mailonline": "^6.0.0",
-    "husky": "^0.13.2"
+    "commitizen": "^2.9.5",
+    "husky": "^0.13.4",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1"
   },
   "config": {
     "commitizen": {
@@ -31,3 +36,4 @@
     }
   }
 }
+
