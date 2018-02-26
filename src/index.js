@@ -22,59 +22,38 @@ const makeAffectsLine = function(answers) {
 
 module.exports = {
   prompter(cz, commit) {
-    console.info("Running npm run lint...");
-    return shell.exec("npm run lint", { async: true }, function(
-      code,
-      stdout,
-      stderr
-    ) {
-      if (stdout.includes("Please fix them and try committing again.")) {
-        console.info(
-          "\x1b[31m%s\x1b[0m",
-          `
-    
-Errors have been found in your files that prettier can't fix. Please run eslint --fix or fix them yourself
-            
-./node_modules/eslint/bin/eslint.js --fix ./[Full path to file].js
-^ For Example ^
-            
-`
-        );
-      } else {
-        return inquirer.prompt(questions).then(answers => {
-          const wrapOptions = {
-            indent: "",
-            trim: true,
-            width: MAX_LINE_WIDTH
-          };
+    return inquirer.prompt(questions).then(answers => {
+      const wrapOptions = {
+        indent: "",
+        trim: true,
+        width: MAX_LINE_WIDTH
+      };
 
-          const head = answers.type + ": " + answers.subject;
-          const affectsLine = makeAffectsLine(answers);
+      const head = answers.type + ": " + answers.subject;
+      const affectsLine = makeAffectsLine(answers);
 
-          // Wrap these lines at MAX_LINE_WIDTH character
-          const body = wrap(answers.body + affectsLine, wrapOptions);
-          const breaking = wrap(answers.breaking, wrapOptions);
-          const footer = wrap(answers.footer, wrapOptions);
+      // Wrap these lines at MAX_LINE_WIDTH character
+      const body = wrap(answers.body + affectsLine, wrapOptions);
+      const breaking = wrap(answers.breaking, wrapOptions);
+      const footer = wrap(answers.footer, wrapOptions);
 
-          let msg;
+      let msg;
 
-          msg = head;
+      msg = head;
 
-          if (body) {
-            msg += "\n\n" + body;
-          }
-
-          if (breaking) {
-            msg += "\n\nBREAKING CHANGE: " + breaking;
-          }
-
-          if (footer) {
-            msg += "\n\nIssues: WMVT-230" + footer;
-          }
-
-          return commit(msg);
-        });
+      if (body) {
+        msg += "\n\n" + body;
       }
+
+      if (breaking) {
+        msg += "\n\nBREAKING CHANGE: " + breaking;
+      }
+
+      if (footer) {
+        msg += "\n\nIssues: WMVT-230" + footer;
+      }
+
+      return commit(msg);
     });
   }
 };
