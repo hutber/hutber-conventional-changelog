@@ -1,6 +1,6 @@
 {
   "name": "hutber-conventional-changelog",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A rather fragile conventional changelog",
   "main": "index.js",
   "author": "Jamie Hutber <jamie@hutber.com>",
